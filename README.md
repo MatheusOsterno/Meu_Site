@@ -1,2 +1,2 @@
-# Meu_Site
-Esse e o site que crie para me apresentar como Desenvolvedor Full Stack
+# Meu_PortFolio
+Nesse portfólio mostro algumas das minhas habilidades em HTML, CSS e JavaScript.
