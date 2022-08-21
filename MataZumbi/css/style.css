@@ -1,3 +1,7 @@
+html{
+    cursor: url(/MataZumbi/imagens/mira.png) 30 30, auto;
+}
+
 body {
     background-image: url(/MataZumbi/imagens/backgound.jpg);
     background-repeat: no-repeat;
@@ -44,4 +48,9 @@ body {
     float: left;
     font-size: 20px;
     font-weight: bold;
+}
+
+.footer h2 {
+    font-size: 20px;
+    text-align: center;
 }

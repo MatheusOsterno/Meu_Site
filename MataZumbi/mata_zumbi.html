@@ -17,7 +17,7 @@
         <img id='v3' src="imagens/coracao_cheio.png"/>
     </div>
 
-    <div class="cronometro"> Tempo restante?
+    <div class="cronometro"> Tempo restante: <span id="cronometro"></span>
 
     </div>
 </div>
@@ -26,9 +26,9 @@
     <script> 
         posicaoRadomica()
 
-        setInterval(
+        let criaZumbi = setInterval(
             function(){ posicaoRadomica()}
-        ,2000)
+        ,criaZumbiTempo)
     </script>
 
 

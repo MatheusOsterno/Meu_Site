@@ -1,6 +1,19 @@
 let altura = 0
 let largura = 0
 let vidas = 1
+let tempo = 10
+/////////////////// Logica do nivel do game
+let criaZumbiTempo = 1500
+let nivel = window.location.search
+nivel.replace('?','')
+if (nivel === 'Normal'){
+    criaZumbiTempo = 1500
+}else if (nivel === 'Difícil') {
+    criaZumbiTempo = 1000
+}else if(nivel === 'Difícil') {
+    criaZumbiTempo = 750
+}
+
 
 ajustaTamanhoDoJogo = () => {
     altura = window.innerHeight
@@ -9,10 +22,22 @@ ajustaTamanhoDoJogo = () => {
 }
 
 ajustaTamanhoDoJogo()
+ 
+//////////////////// Ajustando cronometro
 
+let cronometro = setInterval(() =>{
+    tempo -= 1
+    
+   if(tempo < 0 ){
+    clearInterval(cronometro)
+    clearInterval(criaZumbi)
+    window.location.href = 'vitoria.html'
+   }else{
+    document.getElementById('cronometro').innerHTML = tempo
+   }
+},1000)
 
 /////////////////////////// Criar elementos HTML
-
 
 
 posicaoRadomica = () =>{
@@ -22,7 +47,7 @@ posicaoRadomica = () =>{
         document.getElementById('zumbi1').remove()
 
         if(vidas > 3){
-            alert('fim de jogo!')
+            window.location.href = 'fim_de_jogo.html'
         }
         document.getElementById('v' + vidas).src='imagens/coracao_vazio.png'
         vidas++
