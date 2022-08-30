@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/vue"></script>
+    <title>Matador de Monstro</title>
+</head>
+<body>
+    <div id="app">
+         <div class="panel scores">
+            <div class="score">
+                <h1>Jogador</h1>
+                <div class="life-bar">
+                    <div class="life"></div>
+                </div>
+                <div>{{ playerLife }}</div>
+            </div>
+            <div class="score">
+                <h1>Monsters</h1>
+                <div class="life-bar">
+                    <div class="life"></div>
+                </div>
+                <div>{{ monsterLife }}</div>
+            </div>
+         </div> 
+         <div class="panel resultado">2</div> 
+         <div class="panel buttons">3</div> 
+         <div class="panel logs">4</div> 
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
