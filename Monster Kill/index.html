@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue"></script>
+
     <title>Matador de Monstro</title>
+    
 </head>
 <body>
     <div id="app">
@@ -14,22 +16,46 @@
             <div class="score">
                 <h1>Jogador</h1>
                 <div class="life-bar">
-                    <div class="life"></div>
+                    <div class="life"
+                    :class="{danger: playerLife < 20}"
+                    :style="{width: playerLife + '%"></div>
                 </div>
-                <div>{{ playerLife }}</div>
+                <div>{{ playerLife }}%</div>
             </div>
             <div class="score">
                 <h1>Monsters</h1>
                 <div class="life-bar">
-                    <div class="life"></div>
+                    <div class="life"
+                    :class="{danger:monsterLife < 20}"
+                    :style="{width{} monsterLife + '%" ></div>
                 </div>
-                <div>{{ monsterLife }}</div>
+                <div>{{ monsterLife }}%</div>
             </div>
          </div> 
-         <div class="panel resultado">2</div> 
+         <div v-if="hasResult" class="panel result"></div> 
          <div class="panel buttons">3</div> 
          <div class="panel logs">4</div> 
     </div>
-    <script src="app.js"></script>
+    <script>
+        new Vue({
+    el: '#app',
+    data:{
+        playerLife: 0,
+        monsterLife: 100,
+    },
+    computed: {
+        hasResult() {
+            return this.playerLife == 0 || this.monsterLife == 0
+        },
+    },
+    methods: {
+
+    },
+    watch: {
+
+    }
+
+})
+    </script>
 </body>
 </html>
